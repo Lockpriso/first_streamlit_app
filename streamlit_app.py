@@ -55,3 +55,17 @@ my_cur.execute("SELECT * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
+
+"Adding second selection tex
+#Add a Text Entry Box and Send the Input to Fruityvice as Part of the API Call
+Second_fruit_choice = streamlit.text_input('What fruit would you like to add?','jackfruit')
+streamlit.write('Thanks for adding ', Second_fruit_choice)
+
+#import requests
+Second_fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+Second_fruit_choice)
+#streamlit.text(Second_fruit_choice)
+
+# write your own comment -what does the next line do? 
+Second_fruityvice_normalized = pandas.json_normalize(Second_fruityvice_response.json())
+# write your own comment - what does this do?
+streamlit.dataframe(Second_fruityvice_normalized)
