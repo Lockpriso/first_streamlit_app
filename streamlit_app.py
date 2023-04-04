@@ -58,7 +58,7 @@ streamlit.dataframe(my_data_rows)
 
 #"Adding second selection tex
 #Add a Text Entry Box and Send the Input to Fruityvice as Part of the API Call
-Second_fruit_choice = streamlit.text_input('What fruit would you like to add?','jackfruit')
+Second_fruit_choice = streamlit.text_input('What fruit would you like to add?','plum')
 streamlit.write('Thanks for adding ', Second_fruit_choice)
 
 #import requests
